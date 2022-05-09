@@ -54,5 +54,3 @@ My lab server specs are i9 9900k and RTX2080Ti, but I haven't finished training 
 
 My research is in program translation, and I hope I can graduate successfully.
 
-深度学习太卷了，菜鸡逐渐失去梦想...
-
