@@ -1,0 +1,4 @@
+tokenizers~=0.10.3
+tensorflow-gpu~=2.6.0
+numpy~=1.19.5
+tree-sitter
