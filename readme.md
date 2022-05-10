@@ -48,7 +48,21 @@ Where step 4 needs to be run in pycharm, select the folder `evaluator/CodeBLEU` 
 
 ### Result
 
-My lab server specs are i9 9900k and RTX2080Ti, but I haven't finished training yet.
+Note that I did not set up warmup because of the high learning rate with few training steps.
+
+**Java to C#**
+
+| model | layer | hidden | learning rate | BLEU | Exact Match | CodeBLEU |
+|---|---|---|---|---|---|---|
+|Transformer-baseline| 12 | 768 | - | 55.84 | 33.0 | 63.74 |
+|Transformer| 12 | 768 | 1e-4 | 50.64 | 31.3 | 58.24 |
+
+**C# to Java**
+
+| model | layer | hidden | learning rate | BLEU | Exact Match | CodeBLEU |
+|---|---|---|---|---|---|---|
+|Transformer-baseline| 12 | 768 | - | 50.47 | 37.9 | 61.59 |
+|Transformer| 12 | 768 | 1e-4 | 45.01 | 31.4 | 53.06 |
 
 #### Other
 
