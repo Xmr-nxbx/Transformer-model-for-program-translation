@@ -12,6 +12,7 @@ In addition, the model has some feature, such as:
 2. gradient accumulation
 3. `tf.function` acceleration
 4. multi-GPU training
+5. mixed precision (float16 and float32)
 
 It should be noted that the gradient accumulation function is replicated in [OpenNMT-tf](https://github.com/OpenNMT/OpenNMT-tf).
 
@@ -63,6 +64,7 @@ Note that I did not set up warmup because of the high learning rate with few tra
 |---|---|---|---|---|---|---|
 |Transformer-baseline| 12 | 768 | - | 50.47 | 37.9 | 61.59 |
 |Transformer| 12 | 768 | 1e-4 | 45.01 | 31.4 | 53.06 |
+|Transformer| 12 | 768 | 5e-5 | 45.91 | 33.0 | 53.89 |
 
 #### Other
 
