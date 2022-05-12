@@ -57,6 +57,7 @@ Note that I did not set up warmup because of the high learning rate with few tra
 |---|---|---|---|---|---|---|
 |Transformer-baseline| 12 | 768 | - | 55.84 | 33.0 | 63.74 |
 |Transformer| 12 | 768 | 1e-4 | 50.64 | 31.3 | 58.24 |
+|Transformer| 12 | 768 | 5e-5 | 53.01 | 35.2 | 60.98 |
 
 **C# to Java**
 
