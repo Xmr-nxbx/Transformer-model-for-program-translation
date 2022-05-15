@@ -1,12 +1,12 @@
-## Transformer model for program translation
+# Transformer model for program translation
 
-### Introduction
+## Introduction
 
 Today, many studies focus on applying neural networks to software engineering tasks such as comment generation, code search, clone detection, and so on. Among them, the program translation task requires the model to translate the source code to the target code without changing its functionality. This task requires the model to understand the source code semantics and generate code based on the specifications of the target programming language.
 
-This repository is created to investigate the program translation baseline Transformer. the CodeTrans dataset is shown in [CodeXGLUE/CodeTrans](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/code-to-code-trans).
+This repository is created to investigate the program translation baseline Transformer. The CodeTrans dataset is shown in [CodeXGLUE/CodeTrans](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/code-to-code-trans).
 
-In addition, the model has some feature, such as:
+In addition, our model has some feature, such as:
 
 1. simple modification of parameters
 2. gradient accumulation
@@ -14,11 +14,9 @@ In addition, the model has some feature, such as:
 4. multi-GPU training
 5. mixed precision (float16 and float32)
 
-It should be noted that the gradient accumulation function is replicated in [OpenNMT-tf](https://github.com/OpenNMT/OpenNMT-tf).
+It should be noted that the gradient accumulation function is copied from [OpenNMT-tf](https://github.com/OpenNMT/OpenNMT-tf).
 
-
-
-### Dependency
+## Dependency
 
 - tensorflow 2
 - tokenizers
@@ -27,18 +25,18 @@ It should be noted that the gradient accumulation function is replicated in [Ope
 
 Besides, if evaluating the output, pycharm is required. (To be honest, my programming skills are limited)
 
-### Project Composition
+## Project Composition
 
 - `./data` folder is used to store datasets, vocabulary, references, model's ckpt, and predicted code.
 - `./evaluator` folder holds the evaluation metrics. The evaluation metrics are from [CodeTrans](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/code-to-code-trans/evaluator).
 - `./network` and `./util` folders store the model and preprocessing files.
 
-### Experimental settings
+## Experimental settings
 I believe you can see the `config` dict in `train.py`. Just change the value corresponding to the key listed in `config`. 
 
 Note that the `"swap datasets by dictionary order": False` refers to translate the name of a programming language with a small dictionary order to another programming language.
 
-### Usage
+## Usage
 
 1. Save the dataset with the files like `keyword.file_name.language` to `./data/dataset_name/source/`. Where `keyword` in `[train, valid, test]`, `language` is the program language that the tree-sitter can parse.
 2. run `prepare_data.py` to preprocess dataset.
@@ -47,7 +45,7 @@ Note that the `"swap datasets by dictionary order": False` refers to translate t
 
 Where step 4 needs to be run in pycharm, select the folder `evaluator/CodeBLEU` and mark directory as sources root.
 
-### Result
+## Result
 
 Note that I did not set up warmup because of the high learning rate with few training steps.
 
